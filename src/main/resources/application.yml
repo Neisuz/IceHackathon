@@ -1,0 +1,24 @@
+java:
+  runtime:
+    version: 11
+quarkus:
+  thread-pool:
+    max-threads: 50
+  # ####################
+  datasource:
+    db-kind: "pg"
+    jdbc:
+      url: "jdbc:postgresql://localhost:5432/hackathon"
+      driver: "org.postgresql.Driver"
+      max-size: 8
+      min-size: 2
+    username: "hackathon"
+    password: "qwerty"
+  hibernate-orm:
+    packages: "org.acme.business"
+    dialect: "org.hibernate.dialect.PostgreSQL95Dialect"
+    physical-naming-strategy: "org.acme.db.hibernate.CamelSnakeCaseNamingStrategy"
+    metrics:
+      enabled: false
+    security:
+      is_custom_truststore_required: false
