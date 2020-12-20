@@ -1,6 +1,9 @@
 Запуск приложения 
 `./mvnw compile quarkus:dev`
 
+url 
+`localhost:8080/quarkus`
+
 Sql запросы для базы данных 
 `src/main/resources/db/migration/migration.sql`
 
