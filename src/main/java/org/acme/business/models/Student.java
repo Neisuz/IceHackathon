@@ -6,7 +6,6 @@ import org.acme.business.controllers.BasicController;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -23,11 +22,20 @@ public class Student extends SimpleModel<Student> {
     @OneToOne
     private Tutor tutor;
 
-//    @ManyToMany
-//    private List<Activity> activities;
+    @Transient
+    private String password;
+
+    @Transient
+    private String passwordAgain;
 
     private String login;
     private Date birthday;
+    private String email;
+    private String phone;
+
+    // todo: when activity and achievments are available
+//    @ManyToMany
+//    private List<Activity> activities;
 
 //    @ManyToMany(mappedBy = "tutor")
 //    private List<Medal> medals;
@@ -39,6 +47,12 @@ public class Student extends SimpleModel<Student> {
         }
         if (another.birthday != null) {
             birthday = another.birthday;
+        }
+        if (another.email != null) {
+            email = another.email;
+        }
+        if (another.phone != null) {
+            phone = another.phone;
         }
     }
 
@@ -54,10 +68,13 @@ public class Student extends SimpleModel<Student> {
         Student student = createShortModel();
         student.setName(getName());
         student.setLogin(getLogin());
+        student.setEmail(getEmail());
+        student.setPhone(getPhone());
         student.organizer = BasicController.createModelByExpand(organizer, "organizer", expands);
         student.tutor = BasicController.createModelByExpand(tutor, "tutor", expands);
 //        student.activities = BasicController.createModelsByExpand(activities, "activities", expands);
 //        student.medals = BasicController.createModelsByExpand(medals, "medals", expands);
         return student;
     }
+
 }

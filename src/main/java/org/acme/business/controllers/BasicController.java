@@ -82,7 +82,6 @@ public class BasicController {
                 : produceDefaultModel(shortable, expandables);
     }
 
-
     public static <T> T createShortModel(SimpleModel<T> model) {
         return model != null ? model.createShortModel() : null;
     }
@@ -90,4 +89,5 @@ public class BasicController {
     public static <T> T produceDefaultModel(SimpleModel<T> model, Set<String> expandables) {
         return model != null ? model.createDefaultModel(expandables) : null;
     }
+
 }

@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Set;
 
+/**
+ * объект в котором указываются настройки для репетитора
+ */
 @Getter
 @Setter
 @Entity
@@ -51,4 +54,5 @@ public class Service extends SimpleModel<Service> {
 //        service.tutor = BasicController.createModelByExpand(tutor, "tutor",expands);
         return service;
     }
+
 }

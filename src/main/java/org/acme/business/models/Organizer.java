@@ -54,4 +54,5 @@ public class Organizer extends SimpleModel<Organizer>{
 //        organizer.activities = BasicController.createModelsByExpand(activities, "activities", expands);
         return organizer;
     }
+
 }

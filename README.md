@@ -1,51 +1,44 @@
-# hackathon project
+Запуск приложения 
+`./mvnw compile quarkus:dev`
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Sql запросы для базы данных 
+`src/main/resources/db/migration/migration.sql`
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+Конфигурационный файл для запуска программы
+`src/main/resources/application.yml
+`
 
-## Running the application in dev mode
+Обработка асинхронных http запросов и редиректа
+`src/main/java/org/acme/http/`
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
+Фича для корректного сохранения данных в базу данных
+`src/main/java/org/acme/db/hibernate/CamelSnakeCaseNamingStrategy.java`
 
-## Packaging and running the application
+обработка enum полей для базы данных
+`src/main/java/org/acme/db/hibernate/PostgreSQLEnumType.java`
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `hackathon-1.0.0-SNAPSHOT-runner.jar` file in the `/target` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/lib` directory.
+класс утилита для трансформаций
+`src/main/java/org/acme/business/utils/TransformationUtils.java
+`
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
+валидация
+`src/main/java/org/acme/business/utils/ValidateUtils.java
+`
 
-The application is now runnable using `java -jar target/hackathon-1.0.0-SNAPSHOT-runner.jar`.
+Объекты(модели)
+`src/main/java/org/acme/business/models/`
 
-## Creating a native executable
+Утилита для отправки уведомлений (в процессе)
+`src/main/java/org/acme/business/jobs/`
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
+Rest api контроллеры
+`src/main/java/org/acme/business/controllers/`
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
+Класс для обработки объектов(моделей)
+`src/main/java/org/acme/business/controllers/BasicController.java`
 
-You can then execute your native executable with: `./target/hackathon-1.0.0-SNAPSHOT-runner`
+Контроллер для проверки безопасности
+`src/main/java/org/acme/business/controllers/ApiSecurityController.java`
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
-
-# Config example
-
-<p>This example displays mach speed in your favourite unit, depending on the specified Quarkus configuration.</p>
-<p>The Quarkus configuration is located in: <code>src/main/resources/application.yml</code></p>
-<p><b>Supersonic!</b></p>
-Guide: https://quarkus.io/guides/config#yaml
+базовый класс для работы с контроллерами, объектами и запросами
+`src/main/java/org/acme/business/controllers/MainController.java`

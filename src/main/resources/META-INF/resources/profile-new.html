@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" tylie="text/css" href="style.css">
+</head>
+<body>
+	<header class="reg-header header-profile-new">
+		<div class="container header-container">	
+			<div class="left-side_head">
+				<div class="logo">
+					<a href="#">
+						<img src="includes/logo.png" alt="">
+					</a>
+				</div>
+				<div class="main-menu">
+					<a href="http://localhost:8080/log-in.html">Курсы</a>
+					<a href="http://localhost:8080/registration.html">Преподаватели</a>
+				</div>
+		    </div>
+			<div class="main-menu_connect">
+				<a class="log-in" href="#">Войти</a>
+				<a href="#">Регистрация</a>
+			</div>
+		</div>
+		<div class="container container-reg container-reg-new">
+			<div class="left-reg_side">
+				<div>
+					<p class="blue-elem">Студент</p>
+					<h1 class="main-name-profile">Алексей Алявин</h1>
+				</div>
+				<div class="head-reg_content">
+					<img class="instruction-line instruction-line_reg-new" src="includes/Vector.png" alt="">	
+					<form action="POST" class="form" id="form">
+						<div class="form-group_inputs">
+							<div class="form-single_input">
+								<label class="form-label" for="university">Университет</label>
+								<input class="form-input" type="university" name="university" id="mail" placeholder="Название университета">
+							</div>
+							<div class="form-single_input">
+								<label class="form-label" for="pass">Специализация</label>
+								<input class="form-input" type="text" name="pass" id="pass" placeholder="Ваша специальность">
+							</div>
+						</div>
+						<div class="form-group_inputs">
+							<div class="form-single_input">
+								<label class="form-label" for="bday">Дата рождения</label>
+								<input class="form-input" type="text" name="bday" id="bday" placeholder="ДД.ММ.ГГГГ">
+							</div>
+							<div class="form-single_input">
+								<label class="form-label" for="pass_valid">Телефон</label>
+								<input class="form-input form-input_valid" type="phone" name="pass" id="pass_valid" placeholder="Введите телефон">
+							</div>
+						</div>
+						<a href="#">
+						<div class="form-group_btns">
+							<input onClick="window.location.reload();" type="button" name="btn" value="Сохранить данные" class="hire submit_btn">
+						</div>
+						</a>
+					</form>
+				</div>
+			</div>
+			<div class="right-reg_side-2">
+				<div class="card card-new card-event-person">
+					<div class="personal-info">
+						<img src="includes/Component-cube.png" alt="">
+						<div class="personal-tag personal-tags personal-tags-new">
+							<a href=""></a>
+							<a href=""></a>
+							<p></p>
+						</div>
+					</div>
+					<div class="personal-data">
+						<p class="person-name">Алексей Алявин</p>
+						<div class="personal-education personal-education-new">
+							<p>Данный раздел доступен для репетиторов</p>
+						</div>
+						<a href="http://localhost:8080/tutor-profile.html">
+						<div class="card-btns">
+							<input type="button" name="btn" value="Стать репетитором" class="hire trigger log-submit_btn submit_btn">
+						</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<footer class="footer footer-new-user">
+		<div class="container footer-container">
+			<div class="left-side_head">
+				<div class="logo">
+					<a href="#">
+						<img src="includes/logo.png" alt="">
+					</a>
+				</div>
+				<div class="main-menu">
+					<a href="#">Курсы</a>
+					<a href="#">Преподаватели</a>
+				</div>
+		    </div>
+			<div class="main-menu_connect">
+				<a href="#"><img src="includes/vk.png" alt=""></a>
+				<a href="#"><img src="includes/twitter.png" alt=""></a>
+				<a href="#"><img src="includes/mail.png" alt=""></a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

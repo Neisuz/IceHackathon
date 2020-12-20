@@ -35,4 +35,5 @@ public class Image extends SimpleModel<Image> {
         image.setUrl(getUrl());
         return image;
     }
+
 }

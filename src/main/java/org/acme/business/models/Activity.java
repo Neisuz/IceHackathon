@@ -19,7 +19,7 @@ import java.util.Set;
 public class Activity extends SimpleModel<Activity> {
 
     private String name;
-
+    // todo: when organizer is available
 //    private Organizer organizer;
     private Date scheduledAt;
     private Integer duration;
@@ -58,6 +58,7 @@ public class Activity extends SimpleModel<Activity> {
         activity.setName(getName());
         activity.setDescr(getDescr());
         activity.setDuration(getDuration());
+        // todo: expand for organizer when is available
 //        activity.organizer = BasicController.createModelByExpand(organizer, "organizer", expands);
         activity.students = BasicController.createModelsByExpand(students, "students", expands);
         return activity;

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" tylie="text/css" href="style.css">
+	<link rel="stylesheet" tylie="text/css" href="catalog.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container header-container">
+			<div class="left-side_head">
+				<div class="logo">
+					<a href="http://localhost:8080/index.html">
+						<img src="includes/logo.png" alt="">
+					</a>
+				</div>
+				<div class="main-menu">
+					<a href="http://localhost:8080/catalog.html">Курсы</a>
+					<a href="http://localhost:8080/catalog-tutors.html">Преподаватели</a>
+				</div>
+		    </div>
+			<div class="main-menu_connect">
+				<a class="log-in" href="http://localhost:8080/log-in.html">Войти</a>
+				<a href="http://localhost:8080/registration.html">Регистрация</a>
+			</div>
+		</div>
+	</header>
+	<section class="catalog-search">
+		<div class="container container-search">
+			<h1 class="catalog-title">Онлайн-курсы</h1>
+			<div class="search-mass">
+				<button class="search-btn"><img src="includes/search.png" alt=""></button>
+				<input type="search" id="site-search" name="q" aria-label="Search through site content">
+	   		</div>
+   		</div>
+	</section>
+	<section class="catalog-show-result">
+		<div class="container container-results">
+	    	<div class="results-cards">
+	    		<div class="card">
+	    			<div class="background-img">
+	    				<a class="type-filter" href="#">Программирование</a>
+	    				<p class="time-filter">7 недель</p>
+	    			</div>
+	    			<div class="info-card">
+	    				<div class="date-info">
+	    					<div class="start-time">
+	    						<img src="includes/calendar.png" alt="">
+	    						<p>Старт: 29.31.2020</p>
+	    					</div>
+	    					<div class="form-lesson">
+	    						<img src="includes/place.png" alt="">
+	    						<p>Онлайн</p>
+	    					</div>
+	    				</div>
+	    				<h2 class="card-title">Изучаем CSS с нуля</h2>
+	    				<p class="card-text">Курс идеально подойдет для новичков, кто уже закончил осваивать HTML и готов идти дальше!</p>
+	    				<div class="card-btns">
+	    					<input type="button" name="btn" value="Вперёд!" class="hire  log-submit_btn submit_btn">
+	    					<span class="card-price-sum">7200₽</span>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		<div class="card">
+	    		</div>
+	    		<div class="card">
+	    		</div>
+	    	</div>
+	    	<div class="catalog-sidebar">
+		    	<div class="sidebar">
+		  			<h2>Выберите фильтры</h2>
+		  			<label class="baseCheckBox" for="soon">
+		  				<input type="checkbox" id="soon" name="Скоро старт" checked>
+		  				<span class="checkbox_soon">Скоро старт</span>
+		  			</label>
+		  			<p>Направление</p>
+		  			<div class="filter-column">
+		  				<label class="baseCheckBox" for="program">
+			  				<input type="checkbox" id="program" name="Программирование">
+			  				<span class="checkbox_soon">Программирование</span>
+		  				</label>
+		  				<label class="baseCheckBox" for="design">
+			  				<input type="checkbox" id="design" name="Дизайн">
+			  				<span class="checkbox_soon">Дизайн</span>
+		  				</label>
+		  				<label class="baseCheckBox" for="marketing">
+			  				<input type="checkbox" id="marketing" name="Маркетинг">
+			  				<span class="checkbox_soon">Маркетинг</span>
+		  				</label>
+		  				<label class="baseCheckBox" for="language">
+			  				<input type="checkbox" id="language" name="Иностранные языки">
+			  				<span class="checkbox_soon">Иностранные языки</span>
+		  				</label>
+			  			<a  class="show-more" href="#">Показать еще</a>
+		  			</div>
+		  			<p>Стоимость</p>
+		  			<div class="filter-column">
+			  			<label class="baseCheckBox" for="payed">
+				  			<input type="checkbox" id="payed" name="Платное">
+				  			<span class="checkbox_soon">Платное</span>
+			  			</label>
+			  			<label class="baseCheckBox" for="free">
+				  			<input type="checkbox" id="free" name="Бесплатное">
+				  			<span class="checkbox_soon">Бесплатное</span>
+			  			</label>
+		  			</div>
+		  			<p>Формат занятий</p>
+		  			<div class="filter-column">
+			  			<label class="baseCheckBox" for="online">
+				  			<input type="checkbox" id="online" name="Онлайн">
+				  			<span class="checkbox_soon">Онлайн</span>
+			  			</label>
+			  			<label class="baseCheckBox" for="education">
+				  			<input type="checkbox" id="education" name="Очное">
+				  			<span class="checkbox_soon">Очное</span>
+			  			</label>
+		  			</div>
+	    		</div>
+    		</div>
+    	</div>
+	</section>
+	<footer class="footer">
+		<div class="container footer-container">
+			<div class="left-side_head">
+				<div class="logo">
+					<a href="#">
+						<img src="includes/logo.png" alt="">
+					</a>
+				</div>
+				<div class="main-menu">
+					<a href="#">Курсы</a>
+					<a href="#">Преподаватели</a>
+				</div>
+		    </div>
+			<div class="main-menu_connect">
+				<a href="#"><img src="includes/vk.png" alt=""></a>
+				<a href="#"><img src="includes/twitter.png" alt=""></a>
+				<a href="#"><img src="includes/mail.png" alt=""></a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

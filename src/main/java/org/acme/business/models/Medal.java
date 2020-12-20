@@ -9,6 +9,9 @@ import javax.persistence.Table;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * достижения для студентов
+ */
 @Getter
 @Setter
 @Entity
@@ -39,4 +42,5 @@ public class Medal extends SimpleModel<Medal> {
 //        medal.students = BasicController.createModelsByExpand(students, "students", expands);
         return medal;
     }
+
 }

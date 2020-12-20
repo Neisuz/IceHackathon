@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--	<link rel="stylesheet"  href="style.css">-->
+	<title>SeeWide</title>
+	<link rel="stylesheet" tylie="text/css" href="style.css"/>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("PersonManagement", []);
+
+		//Controller Part
+		app.controller("PersonManagementController", function ($scope, $http) {
+
+			$scope.students = [];
+
+			$scope.form = {
+				email: "",
+				password: "",
+				passwordAgain: ""
+			};
+
+			_refreshPageData();
+
+			$scope.add = function () {
+				var data = { "email": $scope.form.email, "password": $scope.form.password, "passwordAgain": $scope.form.passwordAgain };
+
+				$http({
+					method: "POST",
+					url: '/v1/students/',
+					data: angular.toJson(data),
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				}).then(_success, _error);
+			};
+
+			function _refreshPageData() {
+				$http({
+					method: 'GET',
+					url: '/v1/students/'
+				}).then(function successCallback(response) {
+					$scope.students = response.data;
+				}, function errorCallback(response) {
+					console.log(response.statusText);
+				});
+			}
+
+			function _redirect() {
+				$http({
+					method: 'GET',
+					url: '/v1/students/1'
+				}).then(function successCallback(response) {
+					$scope.students = response.data;
+				}, function errorCallback(response) {
+					console.log(response.statusText);
+				});
+			}
+
+			function _success(response) {
+				_refreshPageData();
+				_clearForm();
+				_redirect()
+			}
+
+			function _error(response) {
+				alert(response.data.message || response.statusText);
+			}
+
+			//Clear the form
+			function _clearForm() {
+				$scope.form.email = "";
+				$scope.form.password = "";
+				$scope.form.passwordAgain = "";
+			}
+		});
+
+	</script>
+</head>
+<body>
+	<header class="reg-header">
+		<div class="container header-container">
+			<div class="left-side_head">
+				<div class="logo">
+					<a href="#">
+						<img src="includes/logo.png" alt="">
+					</a>
+				</div>
+				<div class="main-menu">
+					<a href="http://localhost:8080/catalog.html">Курсы</a>
+					<a href="http://localhost:8080/catalog-tutors.html">Преподаватели</a>
+				</div>
+		    </div>
+			<div class="main-menu_connect">
+				<a class="log-in" href="http://localhost:8080/log-in.html">Войти</a>
+				<a href="#">Регистрация</a>
+			</div>
+		</div>
+		<div class="container container-reg">
+			<div class="left-reg_side">
+				<div class="head-reg_title">
+					<h1>Регистрация</h1>
+					<a href="http://localhost:8080/log-in.html" class="head-link_togo">Войти</a>
+				</div>
+				<div class="head-reg_content">
+					<img class="instruction-line instruction-line_reg" src="includes/Vector.png" alt="">	
+					<form action="POST" class="form" id="form">
+						<div class="form-group_inputs">
+							<div class="form-single_input">
+								<label class="form-label" for="mail">Ваш e-mail</label>
+								<input class="form-input" type="email" name="email" id="mail" placeholder="Введите вашу почту">
+							</div>
+							<div class="form-single_input">
+								<label class="form-label" for="pass">Введите пароль</label>
+								<input class="form-input" type="text" name="pass" id="pass" placeholder="Введите пароль">
+							</div>
+						</div>
+						<div class="form-group_inputs">
+							<div class="form-single_link">
+								<p class="form-another-link_title">Регистрация с помощью</p>
+								<div class="btns_another_reg">
+									<div class="link-block">
+										<img src="includes/vk.png" alt="">
+									</div>
+									<div class="link-block">
+										<img src="includes/twitter.png" alt="">
+									</div>
+									<div class="link-block">
+										<img src="includes/mail.png" alt="">
+									</div>
+								</div>
+							</div>
+							<div class="form-single_input">
+								<label class="form-label" for="pass_valid">Ваш пароль еще раз</label>
+								<input class="form-input form-input_valid" type="text" name="pass" id="pass_valid" placeholder="Введите пароль еще раз">
+							</div>
+						</div>
+						<a href="http://localhost:8080/reg-success.html">
+						<div class="form-group_btns">
+							<input  type="button" name="btn" value="Вперёд!" class="hire submit_btn" >
+							<div class="btns-policy">
+								<p>Нажимая на кнопку,  вы даете согласие на обработку своих персональных данных</p>
+							</div>
+						</div>
+						</a>
+					</form>
+				</div>
+			</div>
+			<div class="right-reg_side">
+				<img src="includes/space-discovery.png" alt="">
+			</div>
+		</div>
+	</header>
+<!-- 	<section>
+		<div class="container">
+			
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			
+		</div>
+	</footer> -->
+</body>
+</html>
